@@ -58,7 +58,10 @@ Since we only have 395 data samples, but 30 features, support vector machine may
 #### Description
 k-NN is a type of instance-based learning, or lazy learning, where the function is only approximated locally and all computation is deferred until classification. The k-NN algorithm is among the simplest of all machine learning algorithms.
 
-Both for classification and regression, it can be useful to assign weight to the contributions of the neighbors, so that the nearer neighbors contribute more to the average than the more distant ones. For example, a common weighting scheme consists in giving each neighbor a weight of 1/d, where d is the distance to the neighbor.
+Both for classification and regression, it can be useful to assign weight to the contributions of the neighbors, so that the nearer neighbors contribute more to the average than the more distant ones. For example, a common weighting scheme consists in giving each neighbor a weight of 1/d, where d is the distance to the neighbor.  SVMs can efficiently perform a non-linear classification using what is called the kernel trick, implicitly mapping their non-linear function to linear function, shown in the below figure. An SVM model is a representation of function,  which separate categories by a clear gap that is as wide as possible, just like right bwlow figure.
+
+![Alt text](Kernel_Machine.png "Kernel_Machine")
+copied from Wikipedia
 
 #### Time and Memory Complexity
  * Space Complexity: O(n)
@@ -119,6 +122,10 @@ Choosing the Best Model
 
 Based on the testing score from Section 4, Support Vector Machine (SVM) has the best performance score. The negative part of SVM is large training time comparing with other two models. However, the testing time of SVM is still acceptable, which is 0.005s for 300 data size, similar to the k-NN method. Based the fact that computation power is increasing rapidly in recent days, the model with better performance (metric score) is my first choice.
 
+In machine learning, support vector machines are supervised learning models with associated learning algorithms that analyze data and recognize patterns, used for classification and regression analysis. An SVM training algorithm builds a model that assigns new examples into one category or the other, making it a non-probabilistic binary linear classifier.
+
+
+
 Three parameters of SVM model has been tuned, which are "gamma", "C" and "tolerance". The final model and its F1 score are shown below:
 <pre><code>
 SVC(C=160, cache_size=200, class_weight=None, coef0=0.0, degree=3,
@@ -133,26 +140,6 @@ Done!
 Prediction time (secs): 0.002
 F1 score for test set: 0.794520547945
 </code></pre>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 ## Template code
